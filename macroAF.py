@@ -10,7 +10,6 @@ position1 = pyautogui.Point(x=1267, y=1003)
 position2 = pyautogui.Point(x=1349, y=944)
 running = False
 
-##
 def save_position1():
      global position1
      position1 = pyautogui.position()
@@ -29,28 +28,22 @@ def macro_loop():
             running = False
             break
 
-        # TAB
         pyautogui.press('tab')
         time.sleep(0.1)
 
-        # Pozycja 1 + PPM
         pyautogui.moveTo(position1.x, position1.y, duration=0.1)
         pyautogui.click(button='right')
         time.sleep(0.1)
 
-        # Pozycja 2 + LPM
         pyautogui.moveTo(position2.x, position2.y, duration=0.1)
         pyautogui.click(button='left')
         time.sleep(0.1)
 
-        # TAB
         pyautogui.press('tab')
         time.sleep(0.1)
 
-        # R
         pyautogui.press('r')
 
-        # Czekanie
         time.sleep(4)
 
 def toggle_macro():
@@ -65,7 +58,6 @@ def toggle_macro():
     else:
         print("Macro Turned off")
 
-# Hotkeye
 keyboard.add_hotkey('f4', toggle_macro)
 keyboard.add_hotkey('f2', save_position1)
 keyboard.add_hotkey('f3', save_position2)
